@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,300|Open+Sans+Condensed:300,300italic|Poiret+One|Quicksand:400|Coming+Soon&subset=latin,greek);
+body {
+  padding-top: 80px;
+}
+.jumbotron h1{
+font-family: 'Poiret One', 'Open Sans Condensed', sans-serif;;
+}
+.jumbotron p.lead{
+font-family: 'Oxygen', sans-serif;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.jumbotron{
+text-align: center;
+}
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 100px;
+    height: 80px;
+    padding-top: 0;
+}
+.navbar-brand{
+font-family: 'Quicksand', sans-serif;
+font-size:large;
+
+}
+.img-thumbnail{
+ display: inline;
+ height: 80px;
+}
+#firstName{
+ display: inline-block;
+ vertical-align: middle;
+ line-height: 76px; 
+ width:81px;
+ height: 81px;
+ border-radius: 50%;
+  color:white;
+  text-align: center;
+  box-shadow: -3px 2px 5px black;
+  background-color: maroon;
+  background: -webkit-radial-gradient(red, green, blue 70%); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(red, green, blue 70%); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(red, green, blue 70%); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(red, brown, maroon 70%); /* Standard syntax */
+  background-position: center;
+  overflow: hidden;
+}
+#firstName:hover{
+  color: white;
+  background-color: black;
+}
+.white{
+color:white;
+}
+.well p, p strong{
+font-family: 'Oxygen', sans-serif;
+text-align: justify;
+}
+.well h2{
+font-family: 'Open Sans Condensed', sans-serif;
+}
+.page-header h1{
+font-family: 'Poiret One', cursive;
+}
+.panel-heading h3.panel-title{
+font-family: 'Open Sans Condensed', sans-serif;
+}
+.panel-body p, .panel-body p strong{
+font-family: 'Oxygen', sans-serif;
+}
+.footer-link, .footer-link:hover, .footer-link:visited{
+color: gray;
+}
