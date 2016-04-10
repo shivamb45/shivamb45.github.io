@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+ 
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="This website is official website of Shivam Bharadwaj. View his education, contact and other general details.">
+<meta name="keywords" content="qsort, C, Sorting array, sorting list, sorting numbers, numbersShivam Bharadwaj, Shivam, Bharadwaj, shivamb45, glbitm, shivam, bharadwaj, bhardwaj, shivam bhardwaj, sh1vam, Master Shivam, master shivam, bulandshahr, meerut, programmer, computer science student, cse student, shitx.xyz, shitx co-founder">
+ 
+ <title>qsort() | Sorting a list/array using Standard Library function in C</title> 
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="custom-starter.css" rel="stylesheet">
+
+ </head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      
+      <div class="container-fluid">
+        <div class="navbar-header">
+          
+          
+         <img alt="Shivam's Picture" title="Shivam Bharadwaj" src="prof.jpeg" class="img-circle img-thumbnail" height="80px">
+         <a class="navbar-brand" href="#"> <div id="firstName">Shivam</div>Bharadwaj</a>
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+ <section class="MainContent">
+ <article>
+ <div class="page-header">
+ <h1> Sorting a list/array using Standard Library function in C </h1>
+ </div>
+ <div class="well">
+ <p>The C standard library has a function called <code>qsort()</code> which can sort arrays of different sizes by using a comparator function provided by user / programmer.</p>
+ <p>It is defined in <code>stdlib.h</code> and this is how declaration of <code>qsort()</code> looks like :-</p>
+
+ <pre><code>void qsort(void *array,size_t length,size_t item_size,int (*compar)(const void *, const void*));</code></pre>
+
+ <h2>Parameters of <code>qsort()</code></h2>
+ <ul>
+ 	<li>First parameter  -  <code>*array</code> is a pointer to array, pointing to first element or base of array.</li>
+ 	<li>Second Parameter – <code>length</code> is length of array to be sorted.</li>
+ 	<li>Third Parameter – <code>item_size</code> is size of <strong>one</strong> element of array.</li>
+ 	<li>Fourth Parameter - <code>(*compar)(const void *, const void*)</code> is actually a pointer to a function and plays an important part for qsort() to work properly.</li>
+ </ul>
+
+ <h2>The Comparator Function</h2>
+ <p>This functions is used by <code>qsort()</code> to identify if an element in array is greater than, less than or equal t other. The funtcion takes pointers to two elements and is supposed to return an integer value as per following cases:</p>
+ <ul>
+ 	<li>Should return a <strong>positive</strong> value if first item is <strong>greater than</strong> second.</li>
+ 	<li>Should return a <strong>negative value</strong> if first item is <strong>less than</strong> second.</li>
+ 	<li>Should return <strong>ZERO</strong> if first item is <strong>equal</strong> to second.</li>
+ </ul>
+
+ <p>
+ <code>qsort()</code> requires following signature to be followed by comparator function:-
+ </p>
+ <ol>
+ 	<li>(1) Return type: <code>int</code></li>
+ 	<li>(2) Parameters type: <code>const void *</code></li>
+ </ol>
+ <p>example : <code>int compareElements(const void *a, const void *b);</code></p>
+
+ <h2>Implementaion of <code>qsort()</code></h2>
+ <p>Now lets have a look at how to use <code>qsort()</code> in real program. We will sort an array of integers in ascending order :-</p>
+
+ <pre>
+ <code>
+#include&ltstdio.h&gt
+#include&ltstdlib.h&gt
+
+int compareNumbers(const void *number1, const void *number2)
+{
+	//we need to cast pointers to correct type before retriving numbers
+	int num1= *(int *)number1;
+	int num2= *(int *)number2;
+
+	/* num1 – num2 will return 0 if both are equal
+	    a positive value if num1 is greater
+	    and a negative value if former is smaller */
+	return (num1-num2); 
+}
+
+int main()
+{
+	int listOfNumbers[]={10, 12, 9, 78, 25, 1, 4, 8, 63, 3};
+	int count;
+	
+	printf("Numbers before sorting:\n");
+	for(count=0;count<10;count++)
+	printf("%i ",listOfNumbers[count]);
+
+	qsort(listOfNumbers,10,sizeof(int),compareNumbers);
+
+	printf("\nNumbers after sorting:\n");
+	for(count=0;count<10;count++)
+	printf("%i ",listOfNumbers[count]);
+    
+	return 0;
+}
+ </code>
+ </pre>
+
+ <h2>Ouput</h2>
+ <pre>
+Numbers before sorting:
+10 12 9 78 25 1 4 8 63 3 
+Numbers after sorting:
+1 3 4 8 9 10 12 25 63 78 
+ </pre>
+</div>
+
+</body>
+</html>
